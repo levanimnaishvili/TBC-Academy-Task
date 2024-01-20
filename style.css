@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.desktop-layout {
+  max-width: 980px;
+}
+.flexibility {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+header {
+  position: sticky;
+  background-color: #1a1e1f;
+  height: 84px;
+}
+.header-container {
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: aqua;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.header-container-logo {
+  background-color: red;
+}
+.header-container-menu {
+  background-color: yellow;
+}
+
+.intro-headline {
+  background-color: rgb(43, 248, 129);
+  height: 352px;
+  width: 100%;
+}
+.intro-headline > div {
+  background-color: rgb(202, 84, 37);
+  margin: auto;
+  height: 100%;
+}
+.intro-article {
+  background-color: rgb(247, 97, 97);
+  height: 465px;
+  width: 100%;
+}
+.intro-article-text {
+  background-color: rgb(162, 174, 228);
+  height: 100%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: self-start;
+}
+.intro-article-text > p {
+  font-size: 28px;
+}
+
+.courses {
+  background-color: blue;
+  width: 100%;
+}
+.courses-container {
+  background-color: rgb(44, 42, 42);
+  margin: auto;
+}

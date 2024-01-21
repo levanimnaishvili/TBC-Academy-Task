@@ -116,12 +116,18 @@ header {
   margin-left: 20px;
 }
 
+
 .footer-container {
-  background-color: azure;
+  background-color: rgb(80, 212, 212);
   margin: auto;
-}
-.footer-container-item {
-  background-color: rgb(63, 65, 65);
   width: 100%;
   justify-content: space-between;
+}
+.footer-container-item {
+  background-color: rgb(121, 141, 141);
+  
+}
+.footer-container-item-socials{
+    background-color: red;
+    height: 30px;
 }

@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.desktop-layout {
+  max-width: 980px;
+}
+.flexibility {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+header {
+  position: sticky;
+  background-color: #1a1e1f;
+  height: 84px;
+}
+.header-container {
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: aqua;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.header-container-logo {
+  background-color: red;
+}
+.header-container-menu {
+  background-color: yellow;
+}
+
+.intro-headline {
+  background-color: rgb(43, 248, 129);
+  height: 352px;
+  width: 100%;
+}
+.intro-headline > div {
+  background-color: rgb(202, 84, 37);
+  margin: auto;
+  height: 100%;
+}
+.intro-article {
+  background-color: rgb(247, 97, 97);
+  height: 465px;
+  width: 100%;
+}
+.intro-article-text {
+  background-color: rgb(162, 174, 228);
+  height: 100%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: self-start;
+}
+.intro-article-text > p {
+  font-size: 28px;
+}
+
+.courses {
+  background-color: blue;
+  width: 100%;
+}
+.courses-container {
+  background-color: rgb(44, 42, 42);
+  margin: auto;
+}
+
+.partners {
+  background-color: aqua;
+  width: 100%;
+}
+.partners-container {
+  background-color: blueviolet;
+  margin: auto;
+  flex-direction: column;
+}
+.partners-carousel {
+  margin: auto;
+  background-color: #1a1e1f;
+  height: 50px;
+  width: 100%;
+}
+.partners-container > h3 {
+  background-color: rgb(57, 58, 57);
+  width: 100%;
+  text-align: start;
+}
+
+.questions {
+  background-color: beige;
+  width: 100%;
+}
+.questions-container {
+  background-color: rgb(48, 47, 47);
+  margin: auto;
+  flex-direction: column;
+}
+.questions-container-item1 {
+  background-color: rgb(128, 128, 20);
+  width: 100%;
+  justify-content: space-between;
+}
+.accordion {
+  background-color: aqua;
+  width: 100%;
+}
+.accordion-item-question {
+  justify-content: space-between;
+}
+.accordion-item-answer > ul {
+  margin: 26px 0;
+}
+.accordion-item-answer > ul li {
+  margin-left: 20px;
+}
+
+.footer-container {
+  background-color: rgb(80, 212, 212);
+  margin: auto;
+  width: 100%;
+  justify-content: space-between;
+}
+.footer-container-item {
+  background-color: rgb(121, 141, 141);
+}
+.footer-container-item-socials {
+  background-color: red;
+  height: 30px;
+}

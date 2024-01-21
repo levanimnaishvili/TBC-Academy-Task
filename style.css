@@ -116,7 +116,6 @@ header {
   margin-left: 20px;
 }
 
-
 .footer-container {
   background-color: rgb(80, 212, 212);
   margin: auto;
@@ -125,9 +124,8 @@ header {
 }
 .footer-container-item {
   background-color: rgb(121, 141, 141);
-  
 }
-.footer-container-item-socials{
-    background-color: red;
-    height: 30px;
+.footer-container-item-socials {
+  background-color: red;
+  height: 30px;
 }

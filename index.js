@@ -64,9 +64,9 @@ function toggleEl(...args) {
 }
 
 btnLeft.addEventListener("click", () => {
-  console.log("width is", carousel);
   moveSlide("left");
 });
 btnRight.addEventListener("click", () => {
   moveSlide("right");
 });
+

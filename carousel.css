@@ -1,0 +1,28 @@
+li, ul {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+
+.carousel {
+  width: 90%;
+  height: 300px;
+  background: #b1adad;
+  margin: auto;
+  position: relative;
+}
+
+.buttons {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel li {
+    text-align: center;
+    padding: 50px;
+    font-size: 24px;
+    font-weight: bold;
+}

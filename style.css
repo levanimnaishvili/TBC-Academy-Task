@@ -102,19 +102,36 @@ header {
   width: 100%;
   justify-content: space-between;
 }
+
+/* ACCORDION */
 .accordion {
   background-color: aqua;
   width: 100%;
 }
 .accordion-item-question {
   justify-content: space-between;
+  background-color: antiquewhite;
+  height: 30px;
+}
+.accordion-item-question:hover {
+  cursor: pointer;
+}
+.accordion-item-answer{
+  display: none;
 }
 .accordion-item-answer > ul {
   margin: 26px 0;
+  
 }
 .accordion-item-answer > ul li {
   margin-left: 20px;
 }
+
+.carrot {
+  transform: rotate(90deg);
+}
+
+/* END */
 
 .footer-container {
   background-color: rgb(80, 212, 212);

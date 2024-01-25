@@ -11,17 +11,21 @@
   align-items: center;
 }
 header {
+  top: 0;
   position: sticky;
+  position: -webkit-sticky;
   background-color: #1a1e1f;
-  height: 84px;
 }
 .header-container {
   flex-direction: row;
   justify-content: space-between;
-  background-color: aqua;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
+  margin: auto;
+  width: 900px;
+  height: 84px;
+}
+
+.header-scroll {
+  background-color: #222222f2;
 }
 
 .header-container-logo {
@@ -116,12 +120,11 @@ header {
 .accordion-item-question:hover {
   cursor: pointer;
 }
-.accordion-item-answer{
+.accordion-item-answer {
   display: none;
 }
 .accordion-item-answer > ul {
   margin: 26px 0;
-  
 }
 .accordion-item-answer > ul li {
   margin-left: 20px;
@@ -145,4 +148,9 @@ header {
 .footer-container-item-socials {
   background-color: red;
   height: 30px;
+}
+
+@media screen and (max-width: 760) {
+  .header-mobile {
+  }
 }

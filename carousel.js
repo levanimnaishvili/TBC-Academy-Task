@@ -5,6 +5,7 @@ let btnRight = document.getElementsByClassName("right")[0];
 let slideCount = 10;
 let current = 1;
 let slides = [];
+let navBullets = [];
 let reminder = slideCount % 3;
 for (let i = 0; i < slideCount; i++) {
   let slide = document.createElement("li");
@@ -42,14 +43,27 @@ for (let i = 0; i < slideCount; i++) {
       // შესაძლოა იყოს ერთადერთი ელემენტი ან პირველი ორიდან
       if (i + 2 < slideCount) slide.style.left = 0;
       else if (i + 2 == slideCount) slide.style.left = twoSlidePosX;
-      else slide.style.left = leftX;
+      else {
+        slide.style.left = leftX;
+        let bullet = createBullet(i, 1);
+        navBullets.push(bullet);
+      }
       break;
     case 1:
       // reminder == 2
       // არის მასივის მეორე წევრი
       // შესაძლოა იყოს დარჩენილებიდან მეორე
-      if (i + 1 < slideCount) slide.style.left = leftX;
-      else slide.style.right = twoSlidePosX;
+      if (i + 1 < slideCount) {
+        slide.style.left = leftX;
+        if (slideCount > 3) {
+          let bullet = createBullet(i);
+          navBullets.push(bullet);
+        }
+      } else {
+        slide.style.right = twoSlidePosX;
+        let bullet = createBullet(i, 2);
+        navBullets.push(bullet);
+      }
       break;
     case 2:
       // reminder == 0
@@ -65,142 +79,94 @@ window.addEventListener("load", () => {
   for (let i = 0; i < slideCount; i++) {
     carousel.appendChild(slides[i]);
   }
+  if (navBullets) {
+    let bulletContainer = document.createElement("div");
+    bulletContainer.classList.add("bullets-container");
+    for (let bullet of navBullets) {
+      bulletContainer.appendChild(bullet);
+    }
+    carousel.appendChild(bulletContainer);
+  }
 });
 
 function moveLeft() {
   if (slideCount <= 3) return;
-  // მარცხნივ არაფერია
   if (current - 3 < 0 && reminder == 1) {
-    // ნაშთი 1
-    toggleSlides(current);
+    hideAll();
     current = slideCount - 1;
-    toggleSlides(current, 1);
+    showSlides(current, 1);
   } else if (current - 3 < 0 && reminder == 2) {
-    // ნაშთი 2
-    toggleSlides(current);
+    hideAll();
     current = slideCount - 1;
-    toggleSlides(current, 2);
+    showSlides(current, 2);
   } else if (current - 3 < 0 && reminder == 0) {
-    // უნაშთო
-    toggleSlides(current);
+    hideAll();
     current = slideCount - 2;
-    toggleSlides(current);
+    showSlides(current);
   } else {
-    //მარცხნივ ელემენტებია
-    if (current < slideCount - reminder) {
-      toggleSlides(current);
-    } else {
-      if (reminder == 1) {
-        toggleSlides(current, 1);
-      } else if (reminder == 2) {
-        console.log(current);
-        toggleSlides(current, 2);
-      }
-    }
+    hideAll();
     if (current === slideCount - 1 && reminder === 1) current -= 2;
     else current -= 3;
-    toggleSlides(current);
+    showSlides(current);
   }
 }
 function moveRight() {
   if (slideCount <= 3) return;
   if (current + 2 == slideCount - 1 && reminder == 1) {
-    toggleSlides(current);
+    hideAll();
     current += 2;
-    toggleSlides(current, 1);
+    showSlides(current, 1);
   } else if (current + 3 == slideCount - 1 && reminder == 2) {
-    toggleSlides(current);
+    hideAll();
     current += 3;
-    toggleSlides(current, 2);
+    showSlides(current, 2);
   } else if (current + 3 > slideCount) {
-    if (reminder == 1) {
-      toggleSlides(current, 1);
-    } else if (reminder == 2) {
-      toggleSlides(current, 2);
-    } else {
-      toggleSlides(current);
-    }
+    hideAll();
     current = 1;
-    toggleSlides(current);
+    showSlides(current);
   } else {
-    toggleSlides(current);
+    hideAll();
     current += 3;
-    toggleSlides(current);
-  }
-}
-
-function toggle(element) {
-  element.style.opacity = element.style.opacity === "1" ? "0" : "1";
-}
-function toggleSlides(index, count) {
-  switch (count) {
-    case 1:
-      toggle(slides[index]);
-      break;
-    case 2:
-      toggle(slides[index - 1]);
-      toggle(slides[index]);
-      break;
-    default:
-      toggle(slides[index - 1]);
-      toggle(slides[index]);
-      toggle(slides[index + 1]);
-      break;
+    showSlides(current);
   }
 }
 
 btnLeft.addEventListener("click", () => moveLeft());
 btnRight.addEventListener("click", () => moveRight());
 
-/* 
-RIGHT >>>>>>
-
-if rem == 1 && diplaying rem
-  hide current / toggle(i-1); toggle(i); toggle(i+1)
-  i+=2
-  show next / toggle(i)
-
-if rem == 2 && displaying rem
-  hide current / toggle(i-1); toggle(i); toggle(i+1)
-  i+=3
-  show next / toggle(i-1); toggle(i);
-
-if outrange
-  hide current
-    if rem == 1 toggle(i)
-    else if rem == 2 toggle(i-1); toggle(i);
-    else toggle(i-1); toggle(i); toggle(i+1)
-  i=1
-  show next / toggle(i-1); toggle(i); toggle(i+1)
-
-else
-  hide current / toggle(i-1); toggle(i); toggle(i+1)
-  i+=3
-  show next / toggle(i-1); toggle(i); toggle(i+1)
-
-*/
-
-/* 
-<<<<<<< LEFT
-
-if outrange && rem == 1
-  hide current / toggle(i-1); toggle(i); toggle(i+1)
-  i=count-1
-  show next / toggle(i)
-
-if outrange && rem == 2
-  hide current / toggle(i-1); toggle(i); toggle(i+1)
-  i=count-1
-  show next / toggle(i-1); toggle(i);
-
-if outrange && rem == 0
-  hide current / toggle(i-1); toggle(i); toggle(i+1)
-  i=count-2
-  show next / toggle(i-1); toggle(i); toggle(i+1)
-
-else
-  hide current / toggle(i-1); toggle(i); toggle(i+1)
-  i+=3
-  show next / toggle(i-1); toggle(i); toggle(i+1)
-
-*/
+function createBullet(slideIndex, slidesToShow) {
+  let bullet = document.createElement("button");
+  bullet.classList.add("bullet");
+  bullet.addEventListener("click", () => {
+    if (current === slideIndex) return;
+    else {
+      hideAll();
+      current = slideIndex;
+      slidesToShow
+        ? showSlides(slideIndex, slidesToShow)
+        : showSlides(slideIndex);
+    }
+  });
+  return bullet;
+}
+function showSlides(index, count) {
+  switch (count) {
+    case 1:
+      slides[index].style.opacity = "1";
+      break;
+    case 2:
+      slides[index - 1].style.opacity = "1";
+      slides[index].style.opacity = "1";
+      break;
+    default:
+      slides[index - 1].style.opacity = "1";
+      slides[index].style.opacity = "1";
+      slides[index + 1].style.opacity = "1";
+      break;
+  }
+}
+function hideAll() {
+  for (let slide of slides) {
+    slide.style.opacity = "0";
+  }
+}

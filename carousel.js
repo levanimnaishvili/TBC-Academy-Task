@@ -88,7 +88,22 @@ window.addEventListener("load", () => {
     carousel.appendChild(bulletContainer);
   }
 });
-
+let intervalId;
+if(slideCount > 3){
+  intervalId = setInterval(() => {
+    moveRight();
+  }, 3000);
+}
+carousel.addEventListener("mouseenter", () =>{
+  if(intervalId) clearInterval(intervalId);
+})
+carousel.addEventListener('mouseleave', () => {
+  if(slideCount > 3){
+    intervalId = setInterval(() => {
+      moveRight();
+    }, 3000);
+  }
+})
 function moveLeft() {
   if (slideCount <= 3) return;
   if (current - 3 < 0 && reminder == 1) {

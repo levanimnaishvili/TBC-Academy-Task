@@ -151,7 +151,11 @@ header {
   width: 100%;
   text-align: start;
 }
-
+/* 
+===== 
+===== 
+===== QA - QUESTIONS
+*/
 .questions {
   background-color: beige;
   width: 100%;
@@ -166,8 +170,23 @@ header {
   width: 100%;
   justify-content: space-between;
 }
+.more-questions-mobile {
+  display: none;
+}
+.more-questiions {
+  display: inline-block;
+}
+/* 
+=====  ^^^^^^^^^^^^
+===== QA - QUESTIONS
+===== 
+*/
 
-/* ACCORDION */
+/* 
+=====  
+===== ACCORDION
+===== 
+*/
 .accordion {
   background-color: aqua;
   width: 100%;
@@ -251,6 +270,12 @@ header {
     background-color: rgba(22, 22, 22, 0.62);
   }
   .show-overlay {
+    display: block;
+  }
+  .more-questions {
+    display: none;
+  }
+  .more-questions-mobile {
     display: block;
   }
 }

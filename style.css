@@ -50,10 +50,9 @@ header {
 ===== BURGER 
 */
 .mobile-burger {
-  /* display: none; */
+  display: none;
   width: 26px;
   height: 26px;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 500;
@@ -216,7 +215,7 @@ header {
 .scroll-down {
   transform: translateY(-100%);
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 414px) {
   .header-menu {
     position: fixed;
     right: 0;
@@ -233,6 +232,9 @@ header {
     gap: 50px;
     transition: all 0.5s;
     transition-timing-function: cubic-bezier(0, 0.82, 0.66, 0.72);
+  }
+  .mobile-burger {
+    display: flex;
   }
   .header-menu-toggle {
     transform: translateX(0);

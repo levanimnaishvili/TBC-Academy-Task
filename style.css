@@ -1,6 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .desktop-layout {
   max-width: 980px;
@@ -15,26 +21,81 @@ header {
   position: sticky;
   position: -webkit-sticky;
   background-color: #1a1e1f;
+  transition: all 0.5s;
 }
 .header-container {
   flex-direction: row;
   justify-content: space-between;
   margin: auto;
-  width: 900px;
   height: 84px;
+  padding: 5px 20px;
 }
 
 .header-scroll {
   background-color: #222222f2;
 }
 
-.header-container-logo {
-  background-color: red;
+.header-logo {
+  /* background-color: red; */
 }
-.header-container-menu {
-  background-color: yellow;
+.header-menu {
+  /* background-color: yellow; */
+  display: flex;
+  color: #f4f4f4;
 }
 
+/* 
+=====
+===== 
+===== BURGER 
+*/
+.mobile-burger {
+  /* display: none; */
+  width: 26px;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 500;
+  position: static;
+}
+.burger-line {
+  display: block;
+  background-color: #dbdbdb;
+  height: 4px;
+  border-radius: 2px;
+  transition: all 0.5s;
+}
+.burger-line-top {
+  transform-origin: 0 0;
+  width: 13px;
+}
+.burger-top-cross {
+  transform: rotate(45deg) translateY(-1.5px) translateX(5.4px);
+  background-color: #767676;
+}
+.burger-line-mid {
+  width: 26px;
+  transform-origin: 50% 50%;
+}
+.burger-mid-cross {
+  transform: rotate(-45deg);
+  background-color: #767676;
+}
+.burger-line-bot {
+  width: 13px;
+  transform-origin: 100% 100%;
+  align-self: flex-end;
+}
+.burger-bot-cross {
+  transform: rotate(45deg) translateY(1.5px) translateX(-5.4px);
+  background-color: #767676;
+}
+/* 
+===== ^^^^^
+===== BURGER
+=====
+*/
 .intro-headline {
   background-color: rgb(43, 248, 129);
   height: 352px;
@@ -149,8 +210,45 @@ header {
   background-color: red;
   height: 30px;
 }
-
-@media screen and (max-width: 760) {
-  .header-mobile {
+.scroll-up {
+  transform: translateY(0);
+}
+.scroll-down {
+  transform: translateY(-100%);
+}
+@media screen and (max-width: 760px) {
+  .header-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 270px;
+    flex-direction: column;
+    transform: translateX(201px);
+    opacity: 0;
+    background-color: rgb(34, 34, 34);
+    z-index: 100;
+    padding: 100px 25px;
+    align-items: flex-end;
+    gap: 50px;
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0, 0.82, 0.66, 0.72);
+  }
+  .header-menu-toggle {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    background-color: rgba(22, 22, 22, 0.62);
+  }
+  .show-overlay {
+    display: block;
   }
 }

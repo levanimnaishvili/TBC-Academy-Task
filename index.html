@@ -4,19 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="footer.css" />
     <title>Document</title>
   </head>
   <body>
     <header>
       <div class="header-container desktop-layout flexibility">
-        <div class="header-container-logo">
-          <a href="">logo</a>
+        <div class="header-logo">
+          <img src="assets/logo-main.svg" alt="" />
         </div>
-        <div class="header-container-menu">
+        <div id="overlay" class="overlay"></div>
+        <div class="header-menu" id="header-menu">
           <a href="">მთავარი</a>
           <a href="">TBC IT</a>
           <a href="">TBC x USAID</a>
           <a href="">რისკები</a>
+        </div>
+        <div class="mobile-burger" id="mobile-burger">
+          <span class="burger-line burger-line-top"></span
+          ><span class="burger-line burger-line-mid"></span
+          ><span class="burger-line burger-line-bot"></span>
         </div>
       </div>
     </header>
@@ -44,7 +51,7 @@
         <div class="courses-container desktop-layout">
           <h2>სასწავლო კურსები</h2>
           <ul>
-            <!-- dinamiuri shigtavsi -->
+            <!-- დინამიური შიგთავსი -->
           </ul>
         </div>
       </section>
@@ -58,7 +65,7 @@
         <div class="questions-container desktop-layout flexibility">
           <div class="questions-container-item1 flexibility">
             <h3>ხშირად დასმული კითხვები</h3>
-            <a href="">ყველა კითხვა</a>
+            <a href="" class="more-questions">ყველა კითხვა</a>
           </div>
           <div class="accordion">
             <div class="accordion-item">
@@ -143,24 +150,23 @@
               </div>
             </div>
           </div>
+          <a href="" class="more-questions-mobile">ყველა კითხვა</a>
         </div>
       </section>
     </main>
+    <div class="space"></div>
     <footer>
       <div class="footer-container desktop-layout flexibility">
-        <div class="footer-container-item">
-          <img src="" alt="" />
-          <p>© 2023 ყველა უფლება დაცულია</p>
-          <a href="">წესები და პირობები</a>
-        </div>
-        <div class="footer-container-item">
-          <div class="footer-container-item-socials"></div>
-          <a href="">მოგვწერეთ</a>
-        </div>
+        <span class="footer-logo">LOGO</span>
+        <p class="footer-note">© 2023 ყველა უფლება დაცულია</p>
+        <a href="" class="footer-terms">წესები და პირობები</a>
+        <div class="footer-socials"><span>FB</span><span>YT</span></div>
+        <a href="" class="footer-contact">მოგვწერეთ</a>
       </div>
     </footer>
 
     <script src="carousel.js"></script>
     <script src="accordion.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

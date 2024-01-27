@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="carousel.css" />
     <title>TBC x USAID</title>
   </head>
   <body>
@@ -64,7 +65,29 @@
       <section class="partners">
         <div class="partners-container desktop-layout flexibility">
           <h3>პროექტის პარტნიორები</h3>
-          <div class="partners-carousel desktop-layout"></div>
+          <div id="usaid-carousel" class="carousel"></div>
+          <button id="carousel-btn-left">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="arrow-left"
+              width="21"
+              height="41"
+              viewBox="0 0 21 41"
+            >
+              <path d="M20.3 40.8 0 20.5 20.3.2l.7.7L1.3 20.5 21 40.1z"></path>
+            </svg>
+          </button>
+          <button id="carousel-btn-right">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="arrow-right"
+              width="25"
+              height="41"
+              viewBox="0 0 21 41"
+            >
+              <path d="M20.3 40.8 0 20.5 20.3.2l.7.7L1.3 20.5 21 40.1z"></path>
+            </svg>
+          </button>
         </div>
       </section>
       <section class="questions">
@@ -171,8 +194,10 @@
       </div>
     </footer>
 
-    <script src="carousel.js"></script>
+    <!-- <script src="carousel.js"></script> -->
+    <script src="data.js"></script>
     <script src="accordion.js"></script>
+    <script src="carousel-class.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

@@ -74,6 +74,10 @@ body {
 }
 
 @media screen and (max-width: 414px) {
+  .carousel {
+    width: 95%;
+    margin: 0 auto;
+  }
   .carousel-screen {
     flex-direction: column;
   }

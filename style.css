@@ -1,3 +1,22 @@
+/* 
+============= INDEX =============
+  to jump to section `ctrl+F` the 
+  the word from this index and
+  hit `Enter`
+
+  === GENERAL
+  === HEADER 
+  === BURGER 
+  === MAIN-ARTICLE
+  === COURSES
+  === CAROUSEL
+  === QA-ACCORDION
+  === FOOTER
+*/
+
+/* 
+===== GENERAL 
+*/
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +35,11 @@ a {
   justify-content: flex-start;
   align-items: center;
 }
+/* 
+===== ^^^^^^
+===== ===== ===== ===== ===== 
+===== HEADER 
+*/
 header {
   top: 0;
   position: sticky;
@@ -30,23 +54,16 @@ header {
   height: 84px;
   padding: 5px 20px;
 }
-
 .header-scroll {
   background-color: #222222f2;
 }
-
-.header-logo {
-  /* background-color: red; */
-}
 .header-menu {
-  /* background-color: yellow; */
   display: flex;
   color: #f4f4f4;
 }
-
 /* 
-=====
-===== 
+===== ^^^^^^
+===== ===== ===== ===== ===== 
 ===== BURGER 
 */
 .mobile-burger {
@@ -92,8 +109,7 @@ header {
 }
 /* 
 ===== ^^^^^
-===== BURGER
-=====
+===== MAIN-ARTICLE
 */
 .intro-headline {
   background-color: rgb(43, 248, 129);
@@ -121,7 +137,10 @@ header {
 .intro-article-text > p {
   font-size: 28px;
 }
-
+/* 
+===== ^^^^^
+===== COURSES
+*/
 .courses {
   background-color: blue;
   width: 100%;
@@ -130,7 +149,10 @@ header {
   background-color: rgb(44, 42, 42);
   margin: auto;
 }
-
+/* 
+===== ^^^^^
+===== CAROUSEL
+*/
 .partners {
   background-color: aqua;
   width: 100%;
@@ -152,9 +174,8 @@ header {
   text-align: start;
 }
 /* 
-===== 
-===== 
-===== QA - QUESTIONS
+===== ^^^^^
+===== QA-ACCORDION
 */
 .questions {
   background-color: beige;
@@ -176,17 +197,7 @@ header {
 .more-questiions {
   display: inline-block;
 }
-/* 
-=====  ^^^^^^^^^^^^
-===== QA - QUESTIONS
-===== 
-*/
 
-/* 
-=====  
-===== ACCORDION
-===== 
-*/
 .accordion {
   background-color: aqua;
   width: 100%;
@@ -212,9 +223,10 @@ header {
 .carrot {
   transform: rotate(90deg);
 }
-
-/* END */
-
+/* 
+===== ^^^^^
+===== FOOTER
+*/
 .footer-container {
   background-color: rgb(80, 212, 212);
   margin: auto;
@@ -234,6 +246,10 @@ header {
 .scroll-down {
   transform: translateY(-100%);
 }
+/* 
+===== ^^^^^
+===== MEDIA
+*/
 @media screen and (max-width: 414px) {
   .header-menu {
     position: fixed;

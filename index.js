@@ -1,31 +1,29 @@
-window.addEventListener("scroll", () => {
-  let header = document.getElementsByTagName("header")[0];
-  if (window.scrollY > 84) {
-    header.classList.add("header-scroll");
-  }
-});
+window.addEventListener("scroll", () => onDesktopScroll());
 
-let startY = 0;
 // For mobile devices
+let mobileStartY = 0;
+const deltaYThreshold = 3; 
 window.addEventListener("touchmove", (e) => {
   let header = document.getElementsByTagName("header")[0];
   let currentY = e.touches[0].screenY;
+  let deltaY = currentY - mobileStartY;
 
-  if (startY < currentY) {
+  if (deltaY > deltaYThreshold) {
     header.classList.remove("scroll-down");
     header.classList.add("scroll-up");
-  } else {
+    console.log('up');
+  } else if (deltaY < -deltaYThreshold) {
     header.classList.add("header-scroll");
     header.classList.remove("scroll-up");
     header.classList.add("scroll-down");
+    console.log('down');
   }
 
-  startY = currentY;
+  mobileStartY = currentY;
 });
+
+
 let burger = document.getElementById("mobile-burger");
-let topL = document.getElementsByClassName("burger-line-top")[0];
-let mid = document.getElementsByClassName("burger-line-mid")[0];
-let bot = document.getElementsByClassName("burger-line-bot")[0];
 let menu = document.getElementById("header-menu");
 let overlay = document.getElementById("overlay");
 burger.addEventListener("click", () => {
@@ -34,16 +32,15 @@ burger.addEventListener("click", () => {
 overlay.addEventListener("click", () => {
   burgerAction();
 });
-function burgerAction() {
-  topL.classList.toggle("burger-top-cross");
-  mid.classList.toggle("burger-mid-cross");
-  bot.classList.toggle("burger-bot-cross");
-  menu.classList.toggle("header-menu-toggle");
-  overlay.classList.toggle("show-overlay");
-}
 
 let carouselContainer = document.getElementById("usaid-carousel");
+let carousel = new Carousel(carouselItems, carouselContainer);
+carousel.createCarousel();
 
-console.log(carouselItems);
-let carousel = new Carousel(carouselItems, carouselContainer)
-carousel.createCarousel()
+window.addEventListener("load", () => {
+  let courseListContainer = document.getElementById("usaid-course-list");
+  for (let courseData of courseItems) {
+    let courseItemInstance = new CourseItem(courseData);
+    courseListContainer.appendChild(courseItemInstance.courseItem);
+  }
+});

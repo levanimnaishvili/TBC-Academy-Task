@@ -41,3 +41,9 @@ function burgerAction() {
   menu.classList.toggle("header-menu-toggle");
   overlay.classList.toggle("show-overlay");
 }
+
+let carouselContainer = document.getElementById("usaid-carousel");
+
+console.log(carouselItems);
+let carousel = new Carousel(carouselItems, carouselContainer)
+carousel.createCarousel()

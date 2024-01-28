@@ -52,11 +52,17 @@
     opacity: 0;
     background-color: rgb(34, 34, 34);
     z-index: 100;
+    gap: 10px;
     padding: 100px 25px;
     align-items: flex-end;
-    gap: 50px;
     transition: all 0.5s;
     transition-timing-function: cubic-bezier(0, 0.82, 0.66, 0.72);
+  }
+  .header-menu a {
+    display: inline-block;
+    width: 95%;
+    padding: 15px 0;
+    text-align: end;
   }
   .header-container {
     padding: 5px 20px;

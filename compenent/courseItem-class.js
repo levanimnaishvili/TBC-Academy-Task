@@ -39,6 +39,7 @@ class CourseItem {
     linkToDetails.textContent = "კურსის დეტალები";
     linkToDetails.href = this.linkToDetails;
 
+    linkArrow.appendChild(createBlueArrowSVG());
     linkWrapper.appendChild(linkArrow);
     linkWrapper.appendChild(linkToDetails);
 

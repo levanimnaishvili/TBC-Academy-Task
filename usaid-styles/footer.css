@@ -47,29 +47,34 @@
     color: #353131;
     background-color: #d5d5d5;
   }
-  .space {
-    height: 500px;
-    width: 500px;
-  }
   @media screen and (max-width: 768px) {
     .footer-container {
+      margin: 0 auto;
       padding: 30px;
+      background-color: rgb(26, 30, 31);
+      grid-template-rows: 60px auto 60px 45px;
     }
     .footer-logo {
       grid-row: 1;
       grid-column: 1;
     }
     .footer-contact {
+      width: 7rem;
       grid-row: 2;
       grid-column: 1;
+      font-size: 16px;
+      padding: 5px 30px;
+      justify-self: left;
     }
     .footer-terms {
       grid-row: 3;
       grid-column: 1 / span 2;
+      align-self: self-end;
     }
     .footer-socials {
       grid-row: 2;
       grid-column: 2;
+      justify-self: center;
     }
     .footer-note {
       grid-row: 4;

@@ -188,19 +188,6 @@ header {
     background-position: center;
     height: 217px;
   }
-  /* QA */
-  .questions-header {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-  }
-  .accordion {
-    grid-row: 2;
-    grid-column: 1 / span 2;
-  }
-  .more-questiions {
-    grid-row: 3;
-    grid-column: 1 / span 2;
-  }
 }
 
 @font-face {

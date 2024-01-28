@@ -1,5 +1,6 @@
 # TBC x USAID 
-## https://levanimnaishvili.github.io/TBC-Academy-Task/
+## მითითებულ ბმულს შეგიძლიათ ეწვიოთ პროექტის სანახავად: [TBC Academy Mock Page By Levan](https://levanimnaishvili.github.io/TBC-Academy-Task/) 
+_პროექტი დაჰოსტილია Github-pages საშუალებით_
 ### სტრუქტურა:
 
 - **assets** - ამ საქაღალდეში მოთავსებულია ის მედია ფაილები რომელთან დაკავშირება არ ხდება პერმანენტ ლინკების საშუალებით

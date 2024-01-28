@@ -35,6 +35,14 @@ ul {
   text-indent: 0;
   list-style-type: none;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
 body {
   background-color: #161616;
 }
@@ -65,7 +73,7 @@ header {
 .header-logo {
   width: 182px;
 }
-.header-logo img{
+.header-logo img {
   width: 100%;
 }
 .header-scroll {
@@ -86,47 +94,7 @@ header {
 ===== ===== ===== ===== ===== 
 ===== BURGER 
 */
-.mobile-burger {
-  display: none;
-  width: 26px;
-  height: 26px;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 500;
-  position: static;
-}
-.burger-line {
-  display: block;
-  background-color: #dbdbdb;
-  height: 4px;
-  border-radius: 2px;
-  transition: all 0.5s;
-}
-.burger-line-top {
-  transform-origin: 0 0;
-  width: 13px;
-}
-.cross .burger-line-top {
-  transform: rotate(45deg) translateY(-1.5px) translateX(5.4px);
-  background-color: #767676;
-}
-.burger-line-mid {
-  width: 26px;
-  transform-origin: 50% 50%;
-}
-.cross .burger-line-mid {
-  transform: rotate(-45deg);
-  background-color: #767676;
-}
-.burger-line-bot {
-  width: 13px;
-  transform-origin: 100% 100%;
-  align-self: flex-end;
-}
-.cross .burger-line-bot {
-  transform: rotate(45deg) translateY(1.5px) translateX(-5.4px);
-  background-color: #767676;
-}
+
 /* 
 ===== 
 ===== MAIN-ARTICLE
@@ -192,106 +160,17 @@ header {
 ===== 
 ===== CAROUSEL
 */
-.partners {
-  background-color: #2b2b2b;
-  width: 100%;
-  padding: 30px 0 40px 0;
-  position: relative;
-}
-#carousel-btn-left {
-  position: absolute;
-  left: 60px;
-  bottom: 145px;
-}
-#carousel-btn-right {
-  position: absolute;
-  right: 60px;
-  bottom: 145px;
-}
-.partners-container {
-  margin: auto;
-  flex-direction: column;
-}
 
-.partners-container > h3 {
-  width: 100%;
-  text-align: start;
-  font-size: 24px;
-  font-family: "TBC_GEO_MED";
-}
 /* 
 ===== 
-===== QA-ACCORDION
+===== QA
 */
-.questions {
-  width: 100%;
-}
-.questions-container {
-  margin: auto;
-  flex-direction: column;
-}
-.questions-container-item1 {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
-}
-.questions-header {
-  grid-row: 1;
-  grid-column: 1;
-}
-.more-questiions {
-  grid-row: 1;
-  grid-column: 2;
-}
 
-/* ACCORDION */
-.accordion {
-  width: 100%;
-  grid-row: 2;
-  grid-column: 1/ span 2;
-}
-.accordion-item {
-  border-bottom: 1px solid rgba(85, 85, 85, .8);
-}
-.accordion-item-question {
-  display: flex;
-  justify-content: space-between;
-  height: 30px;
-}
-.accordion-item-question:hover {
-  cursor: pointer;
-}
-.accordion-item-answer {
-  display: none;
-}
-.accordion-item-answer > ul {
-  margin: 26px 0;
-}
-.accordion-item-answer > ul li {
-  margin-left: 20px;
-}
-
-.carrot {
-  transform: rotate(90deg);
-}
 /* 
 ===== 
 ===== FOOTER
 */
-.footer-container {
-  background-color: rgb(80, 212, 212);
-  margin: auto;
-  width: 100%;
-  justify-content: space-between;
-}
-.footer-container-item {
-  background-color: rgb(121, 141, 141);
-}
-.footer-container-item-socials {
-  background-color: red;
-  height: 30px;
-}
+
 
 /* 
 ===== 
@@ -359,13 +238,13 @@ header {
     format("woff2");
 }
 @font-face {
-  font-family: "TBC_GEO_MED";
-  src: url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2")
-    format("woff2");
-  font-weight: regular;
+  font-family: "TBC_GEO_REG";
+  src: url("/assets/TBC_GEO_REG.woff2") format("woff2"),
+    url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2")
+      format("woff2");
 }
 @font-face {
-  font-family: "TBC_GEO_VAR";
+  font-family: "TBC_GEO_MED";
   src: url("https://static.wixstatic.com/ufonts/643d94_93c16d86ec9d47d0a2a36894fbdd54fd/woff2/file.woff2")
     format("woff2");
 }

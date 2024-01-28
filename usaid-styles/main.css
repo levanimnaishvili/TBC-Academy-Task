@@ -83,17 +83,15 @@ header {
   display: flex;
   color: #f4f4f4;
 }
+.active-path {
+  color: #00a3e0;
+}
 .scroll-up {
   transform: translateY(0);
 }
 .scroll-down {
   transform: translateY(-100%);
 }
-/* 
-===== ^
-===== ===== ===== ===== ===== 
-===== BURGER 
-*/
 
 /* 
 ===== 
@@ -143,40 +141,18 @@ header {
 .intro-article-text a:hover {
   color: #aaaaaa;
 }
-
-/* 
-===== 
-===== COURSES
-*/
-.courses h2 {
-  margin-top: 25px;
-  margin-bottom: 55px;
-  font-family: "TBC_GEO_BOLD";
-}
-.courses {
-  padding-bottom: 30px;
-}
-/* 
-===== 
-===== CAROUSEL
-*/
-
-/* 
-===== 
-===== QA
-*/
-
-/* 
-===== 
-===== FOOTER
-*/
-
-
 /* 
 ===== 
 ===== MEDIA
 */
-@media screen and (max-width: 414px) {
+@media screen and (min-width: 768px) {
+    .header-menu {
+      align-items: center;
+      gap: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
   .header-menu {
     position: fixed;
     right: 0;
@@ -240,7 +216,7 @@ header {
 @font-face {
   font-family: "TBC_GEO_REG";
   src: url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2")
-      format("woff2");
+    format("woff2");
 }
 @font-face {
   font-family: "TBC_GEO_MED";

@@ -99,7 +99,7 @@ button {
     fill: rgba(232, 230, 230, 0.6);
   }
   
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 768px) {
     .carousel {
       width: 95%;
       margin: 0 auto;

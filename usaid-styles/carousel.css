@@ -1,111 +1,111 @@
-button {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    text-decoration: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    padding-block: 0;
-    padding-inline: 0;
-    line-height: 0;
-  }
-  body {
-    background: rgb(22, 22, 22);
-  }
-  .partners {
-    background-color: #2b2b2b;
-    width: 100%;
-    padding: 30px 0 40px 0;
-    position: relative;
-  }
-  #carousel-btn-left {
-    position: absolute;
-    left: 60px;
-    bottom: 145px;
-  }
-  #carousel-btn-right {
-    position: absolute;
-    right: 60px;
-    bottom: 145px;
-  }
+.partners {
+  background-color: #2b2b2b;
+  width: 100%;
+  padding: 30px 0 40px 0;
+  position: relative;
+}
+#carousel-btn-left {
+  position: absolute;
+  left: 60px;
+  bottom: 145px;
+}
+#carousel-btn-right {
+  position: absolute;
+  right: 60px;
+  bottom: 145px;
+}
+.partners-container {
+  margin: auto;
+}
+.partners-container > h3 {
+  width: 100%;
+  text-align: start;
+  font-size: 24px;
+  font-family: "TBC_GEO_MED";
+}
+.carousel {
+  width: 980px;
+  height: 250px;
+  margin: auto;
+  position: relative;
+}
+.bullets-container {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.bullet {
+  background: white;
+  cursor: pointer;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.carousel-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: all 1s;
+}
+.carousel-slide-wrapper {
+  width: 250px;
+}
+.carousel-slide-image{
+  width: 100%;
+}
+.carousel-screen-reminder {
+  justify-content: space-evenly;
+}
+.carousel-current-screen {
+  opacity: 1;
+}
+
+.arrow-right {
+  transform: rotate(180deg);
+  fill: rgba(232, 230, 230, 1);
+}
+.arrow-left {
+  fill: rgba(232, 230, 230, 1);
+}
+.arrow-right:hover,
+.arrow-left:hover {
+  fill: rgba(232, 230, 230, 0.6);
+}
+
+@media screen and (max-width: 768px) {
   .partners-container {
-    margin: auto;
-    flex-direction: column;
+    padding: 0 15px;
   }
-  
+  .carousel-slide-wrapper {
+    width: 180px;
+  }
   .partners-container > h3 {
-    width: 100%;
-    text-align: start;
-    font-size: 24px;
-    font-family: "TBC_GEO_MED";
+    font-size: 16px;
   }
   .carousel {
-    width: 980px;
-    height: 250px;
-    margin: auto;
-    position: relative;
-  }
-  .bullets-container {
-    position: absolute;
-    width: 100%;
-    height: 10px;
-    bottom: 50px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
-  }
-  .bullet {
-    background: white;
-    cursor: pointer;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-  }
-  .carousel-wrapper {
-    display: grid;
-    grid-template-rows: 3fr 1fr 1fr;
+    width: 90%;
+    height: 340px;
   }
   .carousel-screen {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0;
-    transition: all 1s;
-  }
-  .carousel-screen-reminder {
+    flex-direction: column;
     justify-content: space-evenly;
   }
-  .carousel-current-screen {
-    opacity: 1;
+  .bullets-container {
+    bottom: 10px;
   }
-  
-  .arrow-right {
-    transform: rotate(180deg);
-    fill: rgba(232, 230, 230, 1);
+  #carousel-btn-left {
+    display: none;
   }
-  .arrow-left {
-    fill: rgba(232, 230, 230, 1);
+  #carousel-btn-right {
+    display: none;
   }
-  .arrow-right:hover,
-  .arrow-left:hover {
-    fill: rgba(232, 230, 230, 0.6);
-  }
-  
-  @media screen and (max-width: 768px) {
-    .carousel {
-      width: 95%;
-      margin: 0 auto;
-    }
-    .carousel-screen {
-      flex-direction: column;
-    }
-  }
-  
+}

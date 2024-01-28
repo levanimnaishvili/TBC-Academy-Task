@@ -24,10 +24,14 @@ class Carousel {
     let screen = document.createElement("div");
     screen.classList.add("carousel-current-screen");
     for (let i = 1; i <= this.slideCount; i++) {
-      let slide = new Image(250);
+      let slide = new Image();
+      let slideWrapper = document.createElement('div');
       slide.src = this.slideList[i - 1].slideImage;
       slide.alt = this.slideList[i - 1].alt;
-      screen.appendChild(slide);
+      slide.classList.add('carousel-slide-image')
+      slideWrapper.appendChild(slide)
+      slideWrapper.classList.add('carousel-slide-wrapper')
+      screen.appendChild(slideWrapper);
       if (i % 3 === 0) {
         screen.classList.add("carousel-screen");
         this.carouselContainer.appendChild(screen);

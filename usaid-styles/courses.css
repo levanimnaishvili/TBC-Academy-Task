@@ -7,6 +7,7 @@
     margin: auto;
     color: #f4f4f4;
     font-family: "TBC_GEO_MED";
+    padding-bottom: 30px;
   }
   .course-item-container {
     width: 300px;
@@ -31,6 +32,11 @@
     font-size: 18px;
     padding: 20px 0;
     font-weight: normal;
+  }
+  .courses h2 {
+    margin-top: 25px;
+    margin-bottom: 55px;
+    font-family: "TBC_GEO_BOLD";
   }
   .course-item-description {
     font-size: 14px;
@@ -61,7 +67,7 @@
     content: url("/assets/blue-arrow-right.svg");
   }
   
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 768px) {
     .courses {
       width: 95%;
     }

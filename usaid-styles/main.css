@@ -239,8 +239,7 @@ header {
 }
 @font-face {
   font-family: "TBC_GEO_REG";
-  src: url("/assets/TBC_GEO_REG.woff2") format("woff2"),
-    url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2")
+  src: url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2")
       format("woff2");
 }
 @font-face {

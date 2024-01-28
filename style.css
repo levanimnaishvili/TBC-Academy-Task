@@ -21,6 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #f4f4f4;
 }
 a {
   text-decoration: none;
@@ -34,13 +35,11 @@ ul {
   text-indent: 0;
   list-style-type: none;
 }
+body {
+  background-color: #161616;
+}
 .desktop-layout {
   max-width: 980px;
-}
-.flexibility {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 /* 
 ===== ^
@@ -53,13 +52,21 @@ header {
   position: -webkit-sticky;
   background-color: #1a1e1f;
   transition: all 0.2s;
+  z-index: 1000;
 }
 .header-container {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin: auto;
   height: 84px;
-  padding: 5px 20px;
+}
+.header-logo {
+  width: 182px;
+}
+.header-logo img{
+  width: 100%;
 }
 .header-scroll {
   background-color: #222222f2;
@@ -124,93 +131,132 @@ header {
 ===== 
 ===== MAIN-ARTICLE
 */
-.intro-headline {
-  background-color: rgb(43, 248, 129);
+.intro-background {
+  background-image: url("https://static.wixstatic.com/media/93e8a3_9fa23196ddf6427a9da574e2b31a13d2~mv2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   height: 352px;
   width: 100%;
 }
-.intro-headline > div {
-  background-color: rgb(202, 84, 37);
+.intro-headline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  font-size: 34px;
   margin: auto;
   height: 100%;
+  font-family: "TBC_GEO_BOLD";
+}
+.intro-headline span:first-child {
+  font-size: 42px;
+  font-family: "TBC_GEO_BOLD";
 }
 .intro-article {
-  background-color: rgb(247, 97, 97);
+  background-color: #2b2b2b;
   height: 465px;
   width: 100%;
 }
 .intro-article-text {
-  background-color: rgb(162, 174, 228);
   height: 100%;
   margin: auto;
+  display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: self-start;
-}
-.intro-article-text > p {
   font-size: 28px;
+  font-family: "TBC_GEO_MED";
 }
+.intro-article-text a {
+  font-size: 20px;
+  color: #00aef3;
+}
+.intro-article-text a:hover {
+  color: #aaaaaa;
+}
+
 /* 
 ===== 
 ===== COURSES
 */
-
+.courses h2 {
+  margin-top: 25px;
+  margin-bottom: 55px;
+  font-family: "TBC_GEO_BOLD";
+}
+.courses {
+  padding-bottom: 30px;
+}
 /* 
 ===== 
 ===== CAROUSEL
 */
 .partners {
-  background-color: aqua;
+  background-color: #2b2b2b;
   width: 100%;
+  padding: 30px 0 40px 0;
+  position: relative;
+}
+#carousel-btn-left {
+  position: absolute;
+  left: 60px;
+  bottom: 145px;
+}
+#carousel-btn-right {
+  position: absolute;
+  right: 60px;
+  bottom: 145px;
 }
 .partners-container {
-  background-color: blueviolet;
   margin: auto;
   flex-direction: column;
 }
-.partners-carousel {
-  margin: auto;
-  background-color: #1a1e1f;
-  height: 50px;
-  width: 100%;
-}
+
 .partners-container > h3 {
-  background-color: rgb(57, 58, 57);
   width: 100%;
   text-align: start;
+  font-size: 24px;
+  font-family: "TBC_GEO_MED";
 }
 /* 
 ===== 
 ===== QA-ACCORDION
 */
 .questions {
-  background-color: beige;
   width: 100%;
 }
 .questions-container {
-  background-color: rgb(48, 47, 47);
   margin: auto;
   flex-direction: column;
 }
 .questions-container-item1 {
-  background-color: rgb(128, 128, 20);
   width: 100%;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
 }
-.more-questions-mobile {
-  display: none;
+.questions-header {
+  grid-row: 1;
+  grid-column: 1;
 }
 .more-questiions {
-  display: inline-block;
+  grid-row: 1;
+  grid-column: 2;
 }
 
+/* ACCORDION */
 .accordion {
-  background-color: aqua;
   width: 100%;
+  grid-row: 2;
+  grid-column: 1/ span 2;
+}
+.accordion-item {
+  border-bottom: 1px solid rgba(85, 85, 85, .8);
 }
 .accordion-item-question {
+  display: flex;
   justify-content: space-between;
-  background-color: antiquewhite;
   height: 30px;
 }
 .accordion-item-question:hover {
@@ -269,6 +315,9 @@ header {
     transition: all 0.5s;
     transition-timing-function: cubic-bezier(0, 0.82, 0.66, 0.72);
   }
+  .header-container {
+    padding: 5px 20px;
+  }
   .mobile-burger {
     display: flex;
   }
@@ -289,10 +338,40 @@ header {
   .show-overlay {
     display: block;
   }
-  .more-questions {
-    display: none;
+  /* QA */
+  .questions-header {
+    grid-row: 1;
+    grid-column: 1 / span 2;
   }
-  .more-questions-mobile {
-    display: block;
+  .accordion {
+    grid-row: 2;
+    grid-column: 1 / span 2;
   }
+  .more-questiions {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+  }
+}
+
+@font-face {
+  font-family: "TBC_GEO";
+  src: url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/woff2/file.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "TBC_GEO_MED";
+  src: url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2")
+    format("woff2");
+  font-weight: regular;
+}
+@font-face {
+  font-family: "TBC_GEO_VAR";
+  src: url("https://static.wixstatic.com/ufonts/643d94_93c16d86ec9d47d0a2a36894fbdd54fd/woff2/file.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "TBC_GEO_BOLD";
+  src: url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/woff2/file.woff2")
+    format("woff2");
 }
